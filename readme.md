@@ -1,5 +1,6 @@
 # Maximum Torque Per Ampere Control of Interior Permanent Magnet Synchronous Machine
 
+
 ## Table of Contents
 - [Introduction](#introduction)
   - [Torque Relationship With Current Angle (Gamma)](#torque-relationship-with-current-angle-gamma)
