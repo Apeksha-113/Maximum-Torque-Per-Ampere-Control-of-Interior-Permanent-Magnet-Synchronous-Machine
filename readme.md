@@ -140,7 +140,7 @@ Table 1: The list of the Parameters used for the model
 
 
 ### MTPA Controller
-It is used to generate the value of reference current which results in the maximum torque. The torque signal produced by the PI controller is fed to the MTPA controller which generates the optimum angle at which the current drawn by the motor is minimum to produce the required torque. The reference current in the direct and quadrature axis based on that particular current angle is produced as the output of the MTPA controller. 
+It is used to generate the value of `reference current` which results in the maximum torque. The torque signal produced by the PI controller is fed to the MTPA controller which generates the optimum angle at which the current drawn by the motor is minimum to produce the required torque. The reference current in the direct and quadrature axis based on that particular current angle is produced as the output of the MTPA controller. 
 
 Following overall control scheme involves implementing the MTPA algorithm to minimize stator current for the required torque.
 
