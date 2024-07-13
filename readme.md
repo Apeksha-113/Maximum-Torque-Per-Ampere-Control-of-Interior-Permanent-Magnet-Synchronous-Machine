@@ -45,18 +45,6 @@ $$
   <figcaption>Figure 2: Fig.2.  Torque Vs Current angle
   </figcaption>
 </figure>
-aa
-
-
-<figure style="text-align: center;">
-  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/torque%20vs%20gamma.png?raw=true" alt="Torque vs. Current gamma">
-  <figcaption>Figure 1: Torque vs. Current gamma</figcaption>
-</figure>
-
-![Torque vs. Speed Characteristics]()
-
-
-
 
 ---
 
@@ -93,29 +81,71 @@ These various problems associated with the control of the motor couldn't solve o
 
 ---
 
-## Methodology
-The overall control scheme involves implementing the MTPA algorithm to minimize stator current for the required torque.
 
-### Proposed Scheme (MTPA Control)
-1. Initial \( i_m^* \) calculation with \( i_d = 0 \) assumption.
-2. Actual optimized \( i_m^* \) calculation.
-3. Actual \( i_d \) and \( i_q \) calculation.
-4. Calculation of optimum current angle.
 
-![Flowchart](path_to_image)
-![Block Diagram of Proposed Scheme](path_to_image)
+
+## METHODOLOGY
+
+### Overview
+The overall methodologies of the project are mentioned below:
+- **Step-1**: Study of literature and basic theories related to project topics
+- **Step-2**: Problem identification
+- **Step-3**: Development of Simulation model of PMSM
+- **Step-4**: Development of Simulation model of PWM and Inverter
+- **Step-5**: Analysis of the result obtained
+- **Step-6**: Development of Simulation model of MTPA controller
+- **Step-7**: Run the model and observe the result
+- **Step-8**: Calculation of stator current from `i_d` and `i_q`
+- **Step-9**: Comparison of our proposed scheme with the existing system
+- **Step-10**: Development of overall simulation model and stating the outcomes
+
+### Proposed Scheme
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/Blockdiagram%20of%20proposed%20scheme.png?raw=true">
+  <figcaption>Figure 3: Block Diagram of PMSM</figcaption>
+</figure>
+
+Figure 3 is the complete schematic of our proposed solution. The parameters of the PMSM are listed in the table below.
+
+### Parameters Used for the Model
+| **Parameter** | **Value** |
+| ------------- | --------- |
+| Rated Power | 4.3 Kw |
+| Rated Torque | 70 N-m |
+| Rated Speed | 575 rpm |
+| Rated Current | 16 A |
+| Stator resistance | 1.1 |
+| Inductance along the direct-axis | 0.032 |
+| Inductance along the quadrature axis | 0.066 |
+| Torque Constant | 3.462 |
+| Friction Coefficient | 0.017 |
+| Moment of Inertia | 0.032 kg·m<sup>2</sup> |
+| No of pole pair | 4 |
+| `V_dc` | 450 |
+| Stator flux linkage due to PMs | 0.6 Wb |
+
+
+### Proposed Scheme: MTPA Controller
+It is used to generate the value of reference current which results in the maximum torque. The torque signal produced by the PI controller is fed to the MTPA controller which generates the optimum angle at which the current drawn by the motor is minimum to produce the required torque. The reference current in the direct and quadrature axis based on that particular current angle is produced as the output of the MTPA controller. 
+
+Following overall control scheme involves implementing the MTPA algorithm to minimize stator current for the required torque.
+
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/Flowchart.png?raw=true">
+  <figcaption>Figure 4: Flowchart of Proposed Scheme</figcaption>
+</figure>
+
+
+
+
 
 ### Simulation/Modeling
-- Simulation/Modeling of PMSM
-- Simulation/Modeling of Torque
-- Simulation/Modeling of Speed and Current Controller
-- Simulation/Modeling of MTPA Control Scheme
+Simulation/Modelling of Overall Project using the MATLAB/simulink is shown below: 
 
-![Simulation](path_to_image)
-![Speed Calculation](path_to_image)
-![Torque Calculation](path_to_image)
-![Speed and Current Controller](path_to_image)
-![MTPA Implementation](path_to_image)
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/simulation%20modeling%20of%20overall%20project.jpg?raw=true">
+  <figcaption>Figure 5: </figcaption>
+</figure>
 
 ---
 
