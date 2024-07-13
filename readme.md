@@ -13,16 +13,43 @@
 ---
 
 ## Introduction
-Electric motors are used in many industrial and commercial applications wherever rotary motion is needed. They are used to power a wide range of devices from household appliances to industrial machinery, by converting electrical energy into mechanical energy. Among various electric motors in the market, the Permanent Magnet Synchronous Motor (PMSM) has emerged as a popular choice due to its high efficiency, improved dynamic performance, smaller size power density, and torque capabilities [1]. This brushless motor contains a stator with three windings and a permanent magnet as a rotor mounted to create field poles. It produces smooth torque, low noise, and has high dynamic performance as compared to conventional motors. High speeds can be achieved owing to a lack of rotor windings and resultant cooling limitations and hence are mainly used for high-speed applications like robotics [2].
+PMSM is a synchronous motor that uses permanent magnet on the rotor instead of wound field coils that takes three phase ac supply as input and produces rotational motion. The synchronous speed of motor is determined by frequency of supplied ac. Highly efficient and requires precise control for optimizing performance.
+Due to compactness, wider speed range and  large overload capacity, used in various applications like electric vehicles, robotics, and so on.
 
-With the increased application of PMSM, the control of PMSMs has become a subject of intense research and development for enhanced motor performance. One of the most used control strategies is Field Oriented Control (FOC). It transforms the three-phase stator currents into two components: one that creates the magnetizing flux and another that generates torque [3]. It controls the performance of the motor by independently controlling these two components. However, for any given operating point, there exists an optimal current vector that produces maximum torque for the amount of current used. This relationship is defined as the maximum torque per ampere (MTPA) relationship.
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/TvS%20Characteristics.png?raw=true">
+  <figcaption>Figure 1: Torque vs. Speed Characteristics</figcaption>
+</figure>
+
+### Torque Relationship With Current Angle (Gamma)
+- For a current with constant magnitude, the torque of IPMSM will be different according to the angle of the stator current(gamma). ​
+
+- By controlling the current angle, MTPA control generates the maximum torque with a specific current.
+
+Torque produced by PMSM,
+$$
+Te = \frac{3}{2} * \frac{p}{2} * ((Ld - Lq) * id * iq + λm * iq)
+$$
+$$
+id = im * cos(γ)
+$$
+$$
+iq = im * sin(γ)
+$$
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/TvG.jpg?raw=true">
+  <figcaption>Figure 2: Fig.2.  Torque Vs Current angle
+  </figcaption>
+</figure>
+aa
+
 
 <figure style="text-align: center;">
   <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/torque%20vs%20gamma.png?raw=true" alt="Torque vs. Current gamma">
   <figcaption>Figure 1: Torque vs. Current gamma</figcaption>
 </figure>
 
-![Torque vs. Speed Characteristics](https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/TvG.jpg?raw=true)
+![Torque vs. Speed Characteristics]()
 
 
 
