@@ -100,12 +100,13 @@ The overall methodologies of the project are mentioned below:
 - **Step-10**: Development of overall simulation model and stating the outcomes
 
 ### Proposed Scheme
+Figure 3 is the complete schematic of our proposed solution. The parameters of the PMSM are listed in the table below.
 <figure style="text-align: center;">
   <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/Blockdiagram%20of%20proposed%20scheme.png?raw=true">
   <figcaption>Figure 3: Block Diagram of PMSM</figcaption>
 </figure>
 
-Figure 3 is the complete schematic of our proposed solution. The parameters of the PMSM are listed in the table below.
+
 
 ### Parameters Used for the Model
 | **Parameter** | **Value** |
@@ -125,7 +126,7 @@ Figure 3 is the complete schematic of our proposed solution. The parameters of t
 | Stator flux linkage due to PMs | 0.6 Wb |
 
 
-### Proposed Scheme: MTPA Controller
+### MTPA Controller
 It is used to generate the value of reference current which results in the maximum torque. The torque signal produced by the PI controller is fed to the MTPA controller which generates the optimum angle at which the current drawn by the motor is minimum to produce the required torque. The reference current in the direct and quadrature axis based on that particular current angle is produced as the output of the MTPA controller. 
 
 Following overall control scheme involves implementing the MTPA algorithm to minimize stator current for the required torque.
@@ -144,16 +145,41 @@ Simulation/Modelling of Overall Project using the MATLAB/simulink is shown below
 
 <figure style="text-align: center;">
   <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/simulation%20modeling%20of%20overall%20project.jpg?raw=true">
-  <figcaption>Figure 5: </figcaption>
+  <figcaption>Figure 5: Overall Simulation </figcaption>
 </figure>
 
 ---
 
 ## Result and Analysis
-- **Torque-Speed Characteristics:** To verify the modeling of the PMSM, we created a plot showing the relationship between torque and speed by setting the load torque to 70N-m and varying the speed starting from 0.
 
-![Modelled Torque vs Speed](path_to_image)
-![Theoretical Torque vs Speed](path_to_image)
+### Torque-Speed Characteristics
+To verify the modeling of the PMSM, we created a plot showing the relationship between torque and speed by setting the load torque to 70N-m and varying the speed starting from 0.
+
+
+| **Speed (rpm)** | **Torque Produced (N-m)** |
+|-----------------|---------------------------|
+| 100             | 70                        |
+| 200             | 70                        |
+| 300             | 70                        |
+| 400             | 70                        |
+| 410             | 70                        |
+| 500             | 70                        |
+| 575             | 70                        |
+| 600             | 63                        |
+| 700             | 43                        |
+| 800             | 21                        |
+| 900             | 13                        |
+
+The graph below illustrates the relationship between the motor's torque output and its corresponding speed. Furthermore, the theoretical torque-speed characteristics of PMSM are also shown above in Figure 1. The striking resemblance between the two figures shows the validity of our PMSM model to real-world performance.
+
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/modelled%20torque%20vs%20speed.png?raw=true">
+  <figcaption>Figure 6:Modelled Torque vs Speed characteristics of motor
+   </figcaption>
+</figure>
+
+
+
 
 ### Performance Assessment
 We observed the output of the proposed system under four different scenarios:
@@ -163,6 +189,103 @@ We observed the output of the proposed system under four different scenarios:
 4. Variable Speed and Variable Torque
 
 ---
+### Stator Current Reduction
+We recorded the stator current drawn by the motor implementing MTPA and without implementing the MTPA algorithm. The table below shows the acquired value of stator current at different load and torque conditions. We provided constant speed and step load torque.
+
+| Speed | Torque | Without MTPA (Amp) | With MTPA (Amp) | Difference | Percentage change (%) |
+|-------|--------|---------------------|-----------------|------------|------------------------|
+| 300   | 10     | 2.82                | 2.77            | 0.05       | 1.78                   |
+| 300   | 15     | 4.21                | 4.10            | 0.11       | 2.62                   |
+| 300   | 20     | 5.59                | 5.38            | 0.21       | 3.76                   |
+| 300   | 25     | 6.99                | 6.63            | 0.36       | 5.16                   |
+| 300   | 30     | 8.38                | 7.81            | 0.57       | 6.81                   |
+| 300   | 35     | 9.76                | 8.91            | 0.85       | 8.71                   |
+| 300   | 40     | 11.15               | 9.98            | 1.17       | 10.50                  |
+| 300   | 45     | 12.52               | 10.79           | 1.73       | 13.82                  |
+| 300   | 50     | 13.92               | 11.94           | 1.98       | 14.23                  |
+| 300   | 55     | 15.31               | 12.99           | 2.32       | 15.16                  |
+| 300   | 60     | 16.82               | 13.91           | 2.91       | 17.31                  |
+| 300   | 65     | 18.08               | 14.81           | 3.27       | 18.09                  |
+| 300   | 70     | 19.46               | 15.69           | 3.77       | 19.38                  |
+| 300   | 75     | 20.86               | 16.54           | 4.32       | 20.71                  |
+
+The figure below shows the graph of current drawn by the motor implementing MTPA and without implementing the MTPA algorithm based on the data acquired.
+
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/currentcomparision.png?raw=true">
+  <figcaption>Figure 7:Comparison of stator current drawn vs torque with and without using MTPA algorithm
+   </figcaption>
+</figure>
+
+
+It can be observed from both the table and the graph that the percentage change in the stator current drawn is significant during high torque.
+
+### Copper Loss Reduction Rate
+Utilizing the MTPA control scheme results in a reduction in copper loss compared to scenarios without MTPA.
+
+- At high torque levels, the reduction rate in loss is notably increased, reaching almost 37%.
+
+- Similarly, at low torque levels, the reduction rate in loss is increased to nearly 4%.
+
+
+| Torque (Nm) | \((I1)^2\) | \((I2)^2\) | Cu Loss Reduction (%) |
+|-------------|------------|------------|-----------------------|
+| 10          | 7.96       | 7.68       | 3.52                  |
+| 15          | 17.73      | 16.81      | 5.19                  |
+| 20          | 31.25      | 28.95      | 7.36                  |
+| 25          | 48.87      | 43.96      | 10.05                 |
+| 30          | 70.23      | 61.00      | 13.15                 |
+| 35          | 95.26      | 79.39      | 16.66                 |
+| 40          | 124.33     | 99.61      | 19.89                 |
+| 45          | 156.76     | 116.43     | 25.73                 |
+| 50          | 193.77     | 142.57     | 26.43                 |
+| 55          | 234.40     | 168.75     | 28.01                 |
+| 60          | 282.92     | 193.49     | 31.61                 |
+| 65          | 326.89     | 219.34     | 32.91                 |
+| 70          | 378.70     | 246.18     | 35.00                 |
+| 75          | 435.14     | 273.58     | 37.13                 |
+
+
+Above table is depicted in figure below:
+
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/cu%20loss.png?raw=true">
+  <figcaption>Figure 8:Copper loss reduction in % at various torque conditions
+   </figcaption>
+</figure>
+
+### Efficiency Analysis
+Evaluated the efficiency of the PMSM, with particular attention to stator losses.
+
+- At high torque levels, there was a notable improvement in efficiency, reaching almost 24%.
+
+- At low torque levels, efficiency was increased to nearly 2%.
+
+| Torque (Nm) | % Efficiency Improvement |
+|-------------|--------------------------|
+| 10          | 1.81                     |
+| 15          | 2.69                     |
+| 20          | 3.91                     |
+| 25          | 5.43                     |
+| 30          | 7.30                     |
+| 35          | 9.54                     |
+| 40          | 11.73                    |
+| 45          | 16.04                    |
+| 50          | 16.59                    |
+| 55          | 17.86                    |
+| 60          | 20.93                    |
+| 65          | 22.08                    |
+| 70          | 24.03                    |
+
+
+Above table is depicted in figure below:
+
+<figure style="text-align: center;">
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/efficiency_improvement.png?raw=true">
+  <figcaption>Figure 9:Percentage efficiency improvement at various torque condition
+  </figcaption>
+</figure>
+
 
 ## Conclusion
 - Objective is to minimize stator copper loss and increase efficiency of PMSM using MTPA control.
@@ -184,5 +307,3 @@ We observed the output of the proposed system under four different scenarios:
 6. “CHAPTER4 MODEL OF THREE-PHASE INVERTER.”
 
 ---
-
-*Note: Replace `path_to_image` with the actual path to the images in your repository.*
