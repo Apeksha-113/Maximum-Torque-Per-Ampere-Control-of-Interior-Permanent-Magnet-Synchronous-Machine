@@ -13,7 +13,14 @@
 ---
 
 ## Introduction
-Permanent Magnet Synchronous Motor (PMSM) is a synchronous motor that uses permanent magnets on the rotor instead of wound field coils. It takes three-phase AC supply as input and produces rotational motion. The synchronous speed of the motor is determined by the frequency of the supplied AC. PMSMs are highly efficient and require precise control for optimizing performance. Due to their compactness, wider speed range, and large overload capacity, they are used in various applications like electric vehicles, robotics, and more.
+Electric motors are used in many industrial and commercial applications wherever rotary motion is needed. They are used to power a wide range of devices from household appliances to industrial machinery, by converting electrical energy into mechanical energy. Among various electric motors in the market, the Permanent Magnet Synchronous Motor (PMSM) has emerged as a popular choice due to its high efficiency, improved dynamic performance, smaller size power density, and torque capabilities [1]. This brushless motor contains a stator with three windings and a permanent magnet as a rotor mounted to create field poles. It produces smooth torque, low noise, and has high dynamic performance as compared to conventional motors. High speeds can be achieved owing to a lack of rotor windings and resultant cooling limitations and hence are mainly used for high-speed applications like robotics [2].
+
+With the increased application of PMSM, the control of PMSMs has become a subject of intense research and development for enhanced motor performance. One of the most used control strategies is Field Oriented Control (FOC). It transforms the three-phase stator currents into two components: one that creates the magnetizing flux and another that generates torque [3]. It controls the performance of the motor by independently controlling these two components. However, for any given operating point, there exists an optimal current vector that produces maximum torque for the amount of current used. This relationship is defined as the maximum torque per ampere (MTPA) relationship.
+
+<figure>
+  <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/torque%20vs%20gamma.png?raw=true" alt="Torque vs. Current gamma">
+  <figcaption>Figure 1: Torque vs. Current gamma</figcaption>
+</figure>
 
 ![Torque vs. Speed Characteristics](https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/TvG.jpg?raw=true)
 
@@ -33,6 +40,8 @@ Permanent Magnet Synchronous Motor (PMSM) is a synchronous motor that uses perma
 ## Problem Statement
 These various problems associated with the control of the motor couldn't solve our main problem i.e., optimizing current value for the production of desired torque effectively. This higher value of stator current rises several problems like increasing copper loss and reducing the efficiency of the motor. Long-term heating effect also leads to faster demagnetization of the magnet used.
 
+---
+
 ## Objective:
 - To reduce the value of current drawn by the motor to produce the desired torque and improve the efficiency of the motor.
 
@@ -40,6 +49,7 @@ These various problems associated with the control of the motor couldn't solve o
 
 ## Scope and Limitations
 **Scope:**
+
 - Precise mathematical modeling of Interior PMSM.
 - Modeling of three-phase inverter along with PWM generator for its switching action.
 - Modeling of speed and current controller along with the implementation of MTPA control algorithm.
