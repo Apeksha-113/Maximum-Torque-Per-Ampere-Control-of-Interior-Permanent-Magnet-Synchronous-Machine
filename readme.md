@@ -1,14 +1,28 @@
 # Maximum Torque Per Ampere Control of Interior Permanent Magnet Synchronous Machine
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Literature Review](#literature-review)
-3. [Problem Statement](#problem-statement)
-4. [Scope and Limitations](#scope-and-limitations)
-5. [Methodology](#methodology)
-6. [Result and Analysis](#result-and-analysis)
-7. [Conclusion](#conclusion)
-8. [References](#references)
+- [Introduction](#introduction)
+  - [Torque Relationship With Current Angle (Gamma)](#torque-relationship-with-current-angle-gamma)
+- [Literature Review](#literature-review)
+- [Problem Statement](#problem-statement)
+- [Objective](#objective)
+- [Scope and Limitations](#scope-and-limitations)
+  - [Scope](#scope)
+  - [Limitations](#limitations)
+- [Methodology](#methodology)
+  - [Overview](#overview)
+  - [Proposed Scheme](#proposed-scheme)
+  - [Parameters Used for the Model](#parameters-used-for-the-model)
+  - [MTPA Controller](#mtpa-controller)
+  - [Simulation/Modeling](#simulationmodeling)
+- [Result and Analysis](#result-and-analysis)
+  - [Torque-Speed Characteristics](#torque-speed-characteristics)
+  - [Performance Assessment](#performance-assessment)
+  - [Stator Current Reduction](#stator-current-reduction)
+  - [Copper Loss Reduction Rate](#copper-loss-reduction-rate)
+  - [Efficiency Analysis](#efficiency-analysis)
+- [Conclusion](#conclusion)
+- [References](#references)
 
 ---
 
