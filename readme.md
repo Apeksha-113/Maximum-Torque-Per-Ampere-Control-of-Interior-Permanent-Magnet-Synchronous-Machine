@@ -27,6 +27,12 @@ Due to compactness, wider speed range and  large overload capacity, used in va
 - By controlling the current angle, MTPA control generates the maximum torque with a specific current.
 
 Torque produced by PMSM,
+\[ T_e = \frac{3}{2} \times \frac{P}{2} \times \left( (L_d - L_q) \times i_d i_q + \lambda_m i_q \right) \]
+
+\[ i_d = i_m \cos \gamma \]
+
+\[ i_q = i_m \sin \gamma \]
+
 $$
 Te = \frac{3}{2} * \frac{p}{2} * ((Ld - Lq) * id * iq + λm * iq)
 $$
