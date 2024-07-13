@@ -17,7 +17,7 @@ Electric motors are used in many industrial and commercial applications wherever
 
 With the increased application of PMSM, the control of PMSMs has become a subject of intense research and development for enhanced motor performance. One of the most used control strategies is Field Oriented Control (FOC). It transforms the three-phase stator currents into two components: one that creates the magnetizing flux and another that generates torque [3]. It controls the performance of the motor by independently controlling these two components. However, for any given operating point, there exists an optimal current vector that produces maximum torque for the amount of current used. This relationship is defined as the maximum torque per ampere (MTPA) relationship.
 
-<figure>
+<figure style="text-align: center;">
   <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/m/torque%20vs%20gamma.png?raw=true" alt="Torque vs. Current gamma">
   <figcaption>Figure 1: Torque vs. Current gamma</figcaption>
 </figure>
