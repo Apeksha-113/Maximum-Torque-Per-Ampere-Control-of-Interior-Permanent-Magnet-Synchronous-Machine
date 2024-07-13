@@ -261,6 +261,7 @@ Evaluated the efficiency of the PMSM, with particular attention to stator losses
 - At high torque levels, there was a notable improvement in efficiency, reaching almost 24%.
 
 - At low torque levels, efficiency was increased to nearly 2%.
+
 Table 5: Percentage Efficiency Improvement at various torque condition
  
 
