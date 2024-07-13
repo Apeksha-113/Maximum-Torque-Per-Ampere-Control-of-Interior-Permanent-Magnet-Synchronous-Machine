@@ -35,9 +35,11 @@ $$
 $$
 id = im * cos(γ)
 $$
+
 $$
 iq = im * sin(γ)
 $$
+
 <figure style="text-align: center;">
   <img src="https://github.com/Apeksha-113/Maximum-Torque-Per-Ampere-Control-of-Interior-Permanent-Magnet-Synchronous-Machine/blob/MTPA/MTPA_Pic/TvG.jpg?raw=true">
   <figcaption>Figure 2: Fig.2.  Torque Vs Current angle
